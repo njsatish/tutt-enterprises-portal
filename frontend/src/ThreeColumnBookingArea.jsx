@@ -11,39 +11,32 @@ const categoryOrder = [
 ]
 
 const categoryLabels = {
-  'haircuts-fades': 'Haircuts and Fades',
-  'haircut-beard-combos': 'Haircut and Beard Combos',
-  'beard-lineup-shape-up': 'Beard, Lineup, and Shape-Up',
-  'premium-vip-packages': 'Premium and VIP Packages',
-  'facial-care-add-ons': 'Facial Care and Add-ons',
+  'first-time-customers': 'First Time Customers Only',
+  'family-deals': 'Family Deals',
+  adults: 'Adults, Ages 18 and Older',
+  youth: 'Youth, Ages 5 to 17',
 }
 
 // Customer-facing grouping only. Exact Booksy service IDs and variant IDs
-// remain attached to each barber-specific offering.
+// remain attached to each service returned by the portal API.
 const servicePresentation = {
-  8479682: { category: 'haircuts-fades', family: 'haircut', label: 'Haircut' },
-  4009828: { category: 'haircuts-fades', family: 'haircut', label: 'Haircut' },
-  12271585: { category: 'haircuts-fades', family: 'haircut', label: 'Haircut' },
-  13069016: { category: 'haircuts-fades', family: 'haircut', label: 'Haircut' },
-  8479699: { category: 'haircuts-fades', family: 'kids-haircut', label: 'Kids Haircut' },
-  9208573: { category: 'haircuts-fades', family: 'sunday-haircut', label: 'Sunday Haircut' },
-
-  8479688: { category: 'haircut-beard-combos', family: 'haircut-beard', label: 'Haircut and Beard' },
-  8479705: { category: 'haircut-beard-combos', family: 'deluxe-haircut-beard', label: 'Deluxe Haircut and Beard' },
-  8479716: { category: 'haircut-beard-combos', family: 'shape-up-beard', label: 'Shape Up and Beard' },
-
-  8479694: { category: 'beard-lineup-shape-up', family: 'beard-service', label: 'Beard Service' },
-  8479714: { category: 'beard-lineup-shape-up', family: 'shape-up-lineup', label: 'Shape Up / Lineup' },
-  13027604: { category: 'beard-lineup-shape-up', family: 'shape-up-lineup', label: 'Shape Up / Lineup' },
-  4009830: { category: 'beard-lineup-shape-up', family: 'beard-color-trim', label: 'Beard Color and Trim' },
-
-  11416985: { category: 'premium-vip-packages', family: 'silver-package', label: 'Premium Silver Service' },
-  11417006: { category: 'premium-vip-packages', family: 'gold-package', label: 'Premium Gold Service' },
-  11445423: { category: 'premium-vip-packages', family: 'ultimate-package', label: 'Ultimate Grooming Package' },
-  12492713: { category: 'premium-vip-packages', family: 'alvarez-vip', label: 'Alvarez VIP' },
-
-  11416980: { category: 'facial-care-add-ons', family: 'deep-facial', label: 'Deep Facial Pore Reset' },
-  12853392: { category: 'facial-care-add-ons', family: 'eyebrow-shape', label: 'Eyebrow Shape' },
+  6230744: { category: 'first-time-customers', family: 'first-time-kids-haircut', label: 'First Time Kids Haircut, Ages 6 to 17' },
+  6230812: { category: 'first-time-customers', family: 'first-time-kids-lineup', label: 'First Time Kids Lineup, Ages 6 to 17' },
+  6230770: { category: 'first-time-customers', family: 'first-time-adult-haircut-facial-hair', label: 'First Time Adult Haircut with Facial Hair' },
+  6230768: { category: 'first-time-customers', family: 'first-time-adult-haircut', label: 'First Time Adult Haircut' },
+  6230806: { category: 'first-time-customers', family: 'first-time-adult-lineup-beard', label: 'First Time Adult Lineup and/or Beard Trim' },
+  6230783: { category: 'first-time-customers', family: 'first-time-senior-haircut-facial-hair', label: 'Senior Haircut with Facial Hair' },
+  2923464: { category: 'family-deals', family: 'adult-one-child', label: 'One Adult Haircut with Facial Hair plus One Child' },
+  2923472: { category: 'family-deals', family: 'adult-two-children', label: 'One Adult Haircut with Facial Hair plus Two Children' },
+  2923528: { category: 'adults', family: 'senior-haircut-facial-hair', label: 'Senior Haircut Including Facial Hair' },
+  536060: { category: 'adults', family: 'adult-haircut-facial-hair', label: 'Haircut with Facial Hair' },
+  533707: { category: 'adults', family: 'adult-haircut', label: 'Haircut Only' },
+  208643: { category: 'adults', family: 'adult-lineup-facial-hair', label: 'Line Up with Facial Hair' },
+  536085: { category: 'adults', family: 'adult-lineup', label: 'Line Up' },
+  208644: { category: 'adults', family: 'facial-hair-only', label: 'Facial Hair Only' },
+  536178: { category: 'youth', family: 'youth-haircut-facial-hair', label: 'Haircut with Facial Hair, Ages 5 to 17' },
+  536151: { category: 'youth', family: 'youth-haircut', label: 'Haircut Only, Ages 5 to 17' },
+  536177: { category: 'youth', family: 'youth-lineup', label: 'Line Up, Ages 5 to 17' },
 }
 
 const offeringDetails = (service) =>
@@ -348,7 +341,7 @@ export default function ThreeColumnBookingArea() {
         <section className="booking-column" aria-labelledby="service-column-title">
           <span className="column-number">1</span>
           <h3 id="service-column-title">Choose a service</h3>
-          <p className="column-help">Five categories, 15 service families, and 19 exact Booksy offerings.</p>
+          <p className="column-help">Four categories, 17 exact Booksy services for Stacy Tutt III.</p>
 
           <div className="category-list">
             {loadingBarbers && <p className="booking-state">Loading services…</p>}

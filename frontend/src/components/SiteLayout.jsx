@@ -41,7 +41,7 @@ export default function SiteLayout() {
       {!isHomePage && (
         <footer className="mp-footer">
           <div>
-            <strong>HIGH QUALITY BARBERSHOP</strong>
+            <strong>Tutt Enterprises LLC</strong>
             <p>4411 W Gate City Blvd, Suite 105, Greensboro, NC 27407</p>
           </div>
           <nav aria-label="Footer navigation">

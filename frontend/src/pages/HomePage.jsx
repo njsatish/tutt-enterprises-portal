@@ -210,18 +210,18 @@ export default function HomePage() {
 
       <section id="visit" className="visit">
         <div><p className="eyebrow dark">Visit High Quality</p><h2>Your next sharp look starts here.</h2><p><MapPin /> {business?.address || '4411 W Gate City Blvd, Suite 105, Greensboro, NC 27407'}</p><a className="button black" href={venueBookingURL} target="_blank" rel="noreferrer">Book now <ArrowRight size={18} /></a></div>
-        <div className="location-card"><Scissors /><strong>Greensboro,<br />North Carolina</strong></div>
+        <div className="location-card"><Scissors /><strong>Richmond,<br />Virginia</strong></div>
       </section>
 
       <HomeProofSections />
       <ThreeColumnBookingArea />
-      <footer>© 2026 High Quality Barbershop · hqbarbershop.denduluru.com</footer>
+      <footer>© 2026 Tutt Enterprises LLC · hqbarbershop.denduluru.com</footer>
 
       {modalOpen && selectedBarber && (
         <div className="booking-overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setModalOpen(false) }}>
           <section className="booking-modal" role="dialog" aria-modal="true" aria-labelledby="booking-title">
             <button className="modal-close" onClick={() => setModalOpen(false)} aria-label="Close booking dialog"><X size={36} /></button>
-            <p className="eyebrow">High Quality Barbershop</p>
+            <p className="eyebrow">Tutt Enterprises LLC</p>
             <h2 id="booking-title">Book Your Chair</h2>
             <p className="modal-lede">Select your barber and service, then continue to Booksy for live dates and appointment times.</p>
 
