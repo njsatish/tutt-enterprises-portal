@@ -1,0 +1,5 @@
+{
+  "editor.formatOnSave": true,
+  "[go]": { "editor.defaultFormatter": "golang.go" },
+  "eslint.validate": ["javascript", "javascriptreact"]
+}

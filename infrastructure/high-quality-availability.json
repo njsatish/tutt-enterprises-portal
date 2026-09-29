@@ -1,0 +1,198 @@
+{
+  "schemaVersion": 1,
+  "project": "high-quality-barbershop",
+  "region": "us-east-1",
+  "apiName": "hqbarbershop-booksy-availability-api",
+  "apiBasePath": "/availability",
+  "publicProxyPath": "/api/availability",
+  "corsOrigins": [
+    "https://hqbarbershop.denduluru.com",
+    "http://localhost:5173"
+  ],
+  "availabilityWindowDays": 14,
+  "upstreamTimeoutSeconds": 8,
+  "cacheControl": "no-store",
+  "bookingUrlPattern": "https://booksy.com/en-us/instant-experiences/widget/{widgetId}?variantId={variantId}&date={date}T{time}",
+  "notes": [
+    "Business ID is used as the Booksy widget ID only after browser verification for that barber.",
+    "Never store Booksy access tokens, API keys, fingerprints, cookies, or draft IDs in this file.",
+    "Each route must return only current Booksy availability for its configured business and service variant.",
+    "The selected slot is not reserved until Booksy confirms the appointment."
+  ],
+  "barbers": [
+    {
+      "slug": "alejandro",
+      "name": "Alejandro",
+      "businessId": 1359189,
+      "stafferId": 1291255,
+      "widgetId": 1359189,
+      "widgetIdStatus": "verified",
+      "services": [
+        {
+          "serviceId": 8479682,
+          "variantId": 17226087,
+          "slug": "regular-haircut",
+          "route": "/availability/alejandro/regular-haircut"
+        },
+        {
+          "serviceId": 8479688,
+          "variantId": 17226094,
+          "slug": "haircut-and-beard",
+          "route": "/availability/alejandro/haircut-and-beard"
+        },
+        {
+          "serviceId": 8479694,
+          "variantId": 17226100,
+          "slug": "beard-service",
+          "route": "/availability/alejandro/beard-service"
+        },
+        {
+          "serviceId": 8479699,
+          "variantId": 17226105,
+          "slug": "kids-haircut",
+          "route": "/availability/alejandro/kids-haircut"
+        },
+        {
+          "serviceId": 8479705,
+          "variantId": 17226113,
+          "slug": "hyper-service",
+          "route": "/availability/alejandro/hyper-service"
+        },
+        {
+          "serviceId": 8479714,
+          "variantId": 17226122,
+          "slug": "head-line-up-shape",
+          "route": "/availability/alejandro/head-line-up-shape"
+        },
+        {
+          "serviceId": 8479716,
+          "variantId": 17226125,
+          "slug": "shape-up-and-beard",
+          "route": "/availability/alejandro/shape-up-and-beard"
+        },
+        {
+          "serviceId": 11416985,
+          "variantId": 20309828,
+          "slug": "premium-silver-service",
+          "route": "/availability/alejandro/premium-silver-service"
+        },
+        {
+          "serviceId": 11416980,
+          "variantId": 20309823,
+          "slug": "deep-facial-pore-reset",
+          "route": "/availability/alejandro/deep-facial-pore-reset"
+        },
+        {
+          "serviceId": 11417006,
+          "variantId": 20309849,
+          "slug": "premium-gold-service",
+          "route": "/availability/alejandro/premium-gold-service"
+        },
+        {
+          "serviceId": 11445423,
+          "variantId": 20340307,
+          "slug": "men-gift",
+          "route": "/availability/alejandro/men-gift"
+        },
+        {
+          "serviceId": 12853392,
+          "variantId": 21920946,
+          "slug": "eyebrow-shape",
+          "route": "/availability/alejandro/eyebrow-shape"
+        }
+      ]
+    },
+    {
+      "slug": "barlyn-german",
+      "name": "Barlyn German",
+      "businessId": 629741,
+      "stafferId": 542621,
+      "widgetId": 629741,
+      "widgetIdStatus": "verified",
+      "services": [
+        {
+          "serviceId": 9208573,
+          "variantId": 18000120,
+          "slug": "sunday-haircut",
+          "route": "/availability/barlyn-german/sunday-haircut"
+        },
+        {
+          "serviceId": 4009830,
+          "variantId": 9141992,
+          "slug": "black-color-beard-trimmer",
+          "route": "/availability/barlyn-german/black-color-beard-trimmer"
+        },
+        {
+          "serviceId": 4009828,
+          "variantId": 9141986,
+          "slug": "mens-haircut",
+          "route": "/availability/barlyn-german/mens-haircut"
+        }
+      ]
+    },
+    {
+      "slug": "alvarez-barber",
+      "name": "Alvarez Barber",
+      "businessId": 1582174,
+      "stafferId": 1501903,
+      "widgetId": 1582174,
+      "widgetIdStatus": "verified",
+      "services": [
+        {
+          "serviceId": 12492713,
+          "variantId": 21512417,
+          "slug": "alvarez-vip",
+          "route": "/availability/alvarez-barber/alvarez-vip"
+        }
+      ]
+    },
+    {
+      "slug": "jhonny",
+      "name": "Jhonny",
+      "businessId": 1792760,
+      "stafferId": 1719444,
+      "widgetId": 1792760,
+      "widgetIdStatus": "verified",
+      "services": [
+        {
+          "serviceId": 12271585,
+          "variantId": 21262323,
+          "slug": "male-haircut",
+          "route": "/availability/jhonny/male-haircut"
+        }
+      ]
+    },
+    {
+      "slug": "landin-newton",
+      "name": "Landin Newton",
+      "businessId": 1861163,
+      "stafferId": 1789632,
+      "widgetId": 1861163,
+      "widgetIdStatus": "verified",
+      "services": [
+        {
+          "serviceId": 13027604,
+          "variantId": 22114761,
+          "slug": "shape-up",
+          "route": "/availability/landin-newton/shape-up"
+        }
+      ]
+    },
+    {
+      "slug": "wilson-garcia",
+      "name": "Wilson Garcia",
+      "businessId": 1850913,
+      "stafferId": 1778867,
+      "widgetId": 1850913,
+      "widgetIdStatus": "verified",
+      "services": [
+        {
+          "serviceId": 13069016,
+          "variantId": 22161053,
+          "slug": "male-haircut",
+          "route": "/availability/wilson-garcia/male-haircut"
+        }
+      ]
+    }
+  ]
+}

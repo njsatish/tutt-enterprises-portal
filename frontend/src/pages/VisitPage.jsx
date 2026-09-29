@@ -1,0 +1,3 @@
+import { Link } from 'react-router-dom'
+import PageHero from '../components/PageHero'
+export default function VisitPage(){return <><PageHero eyebrow="Visit" title="Find High Quality Barbershop"><p>Plan the visit, then reserve a live appointment time.</p></PageHero><div className="mp-visit"><article className="mp-card"><h2>Address</h2><p>4411 W Gate City Blvd<br/>Suite 105<br/>Greensboro, NC 27407</p><a href="https://www.google.com/maps/search/?api=1&query=4411+W+Gate+City+Blvd+Suite+105+Greensboro+NC+27407">Open in Maps</a></article><article className="mp-card"><h2>Appointments</h2><p>Select a service, barber, date, and live time before continuing to Booksy.</p><Link to="/book">Book Appointment</Link></article></div></>}

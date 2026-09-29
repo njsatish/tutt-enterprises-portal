@@ -1,0 +1,30 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+.aws-sam/
+coverage/
+*.zip
+backend/bootstrap
+
+# Local secrets and AWS credentials
+*.pem
+*.key
+*accessKeys*.csv
+*credentials*.csv
+!.env.deploy.example
+
+# Generated dependencies and builds
+
+# Local backups and logs
+*.before-*
+*.log
+*.pid
+
+# Local secrets
+
+# Generated files
+
+# Temporary files
