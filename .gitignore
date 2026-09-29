@@ -28,3 +28,6 @@ backend/bootstrap
 # Generated files
 
 # Temporary files
+frontend/node_modules/
+frontend/dist/
+infrastructure/.aws-sam/
