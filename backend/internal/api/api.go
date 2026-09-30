@@ -161,6 +161,7 @@ func New() http.Handler {
 		}
 		http.NotFound(w, r)
 	})
+	mux.HandleFunc("/api/availability", availabilityHandler(http.DefaultClient))
 	return logging(mux)
 }
 
