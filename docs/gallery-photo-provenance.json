@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "source": "Tutt Enterprises LLC Booksy portfolio review",
+  "reviewFolder": "~/Downloads/tutt-photo-review-v4",
+  "approvedCandidateNumbers": [
+    5,
+    6,
+    7
+  ],
+  "photos": [
+    {
+      "candidateNumber": 5,
+      "sourceUrl": "https://d2zdpiztbgorvt.cloudfront.net/region1/us/38443/inspiration/37bc1b72872d46509ce1cad562c33f-tutt-enterprises-llc-inspiration-2648feb2ff0a44e0bbee35864312d3-booksy.jpeg?size=360x360",
+      "sourceReviewFile": "candidates/tutt-candidate-05.jpg",
+      "sourceSha256": "37eaf05f8c9fe86eb5d8209dd40055e1ab417fac080f33fe0c607fbd47de0e05",
+      "sourceBytes": 15135,
+      "approvedForImport": true,
+      "approvalBasis": "Explicit user approval in project conversation",
+      "publicFile": "frontend/public/assets/gallery/tutt-work-01.jpg",
+      "publicSha256": "da9f348fad0a8520a5a79b196096a4f90559af67018794df47e39240ade7aa69",
+      "publicationApprovalRecorded": true
+    },
+    {
+      "candidateNumber": 6,
+      "sourceUrl": "https://d2zdpiztbgorvt.cloudfront.net/us/38443/bd20a76d087744d1a5dc170c20c98d56-Tutt-Enterprises-LLC-inspiration.JPEG?size=360x360",
+      "sourceReviewFile": "candidates/tutt-candidate-06.jpg",
+      "sourceSha256": "54300d663662bc16b42c35d59bce46c4ff86bd9b6bca284bd567db50b2c978f7",
+      "sourceBytes": 13059,
+      "approvedForImport": true,
+      "approvalBasis": "Explicit user approval in project conversation",
+      "publicFile": "frontend/public/assets/gallery/tutt-work-02.jpg",
+      "publicSha256": "3310b11a2fa41c43ec86db5c0f3663772ae9c7d34eab988200c7b6b2a109aa6b",
+      "publicationApprovalRecorded": true
+    },
+    {
+      "candidateNumber": 7,
+      "sourceUrl": "https://d2zdpiztbgorvt.cloudfront.net/us/38443/258d13155e8742418273405f03eaa2f3-Tutt-Enterprises-LLC-inspiration.JPEG?size=360x360",
+      "sourceReviewFile": "candidates/tutt-candidate-07.jpg",
+      "sourceSha256": "4ec7ebb34575bf2bfab86303d46f1525527ee634390218caa1d2aea417b5dbe2",
+      "sourceBytes": 16079,
+      "approvedForImport": true,
+      "approvalBasis": "Explicit user approval in project conversation",
+      "publicFile": "frontend/public/assets/gallery/tutt-work-03.jpg",
+      "publicSha256": "2be923d5a9d0dc8c9af715c9d732d58467cf07e7bf4315cfe222c48b7d2572d1",
+      "publicationApprovalRecorded": true
+    }
+  ]
+}
