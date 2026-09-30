@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { loadPortal } from './api.js'
 import TwoColumnBookingArea from './components/TwoColumnBookingArea.jsx'
 import WorkGallery from './components/WorkGallery.jsx'
+import RatingSection from './components/RatingSection.jsx'
 
 export default function App() {
   const [data, setData] = useState(null)
@@ -19,6 +20,7 @@ export default function App() {
       <section className="services" id="services"><div className="wrap"><div className="section-head"><div><p className="eyebrow">Booksy services</p><h2>Choose your service.</h2></div><p>Use the booking area below to select a service, live date, and available time.</p></div><button className="button" type="button" onClick={goToBooking}>Start Booking</button></div></section>
       <TwoColumnBookingArea services={services} />
       <WorkGallery onBook={goToBooking} />
+      <RatingSection onBook={goToBooking} />
       <section id="barber"><div className="wrap barber-grid"><img className="barber-photo" src={barber.photoURL} alt={`${barber.name}, barber`} /><div><p className="eyebrow">Your barber</p><h2>{barber.name}</h2><p className="lede">One barber, one focused experience.</p><button className="button" type="button" onClick={goToBooking}>Book with Stacy</button></div></div></section>
       <section className="visit" id="visit"><div className="wrap"><p className="eyebrow">Plan your visit</p><h2>Richmond, Virginia.</h2><div className="visit-grid"><article><h3>Address</h3><p>{business.addressLine1}<br />{business.addressLine2}<br />{business.cityStateZip}</p><a href={business.mapsURL} target="_blank" rel="noreferrer">Open in Maps</a></article><article><h3>Contact</h3><p><a href={`tel:${business.phoneE164}`}>{business.phone}</a><br /><a href={`mailto:${business.email}`}>{business.email}</a></p></article><article><h3>Hours</h3>{business.hours.map((line) => <p key={line}>{line}</p>)}</article></div></div></section>
     </main>
