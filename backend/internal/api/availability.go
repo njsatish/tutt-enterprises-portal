@@ -37,8 +37,11 @@ type AvailabilityResponse struct {
 }
 
 type upstreamAvailability struct {
-	Dates []AvailabilityDate `json:"dates"`
-	Slots []AvailabilitySlot `json:"slots"`
+	BarberSlug string             `json:"barberSlug"`
+	ServiceID  int                `json:"serviceId"`
+	VariantID  int                `json:"variantId"`
+	Dates      []AvailabilityDate `json:"dates"`
+	Slots      []AvailabilitySlot `json:"slots"`
 }
 
 func serviceByID(id int) (Service, bool) {
@@ -167,9 +170,16 @@ func availabilityHandler(client *http.Client) http.HandlerFunc {
 		}
 		var upstream upstreamAvailability
 		decoder := json.NewDecoder(io.LimitReader(response.Body, 2<<20))
-		decoder.DisallowUnknownFields()
 		if err := decoder.Decode(&upstream); err != nil {
 			writeJSON(w, http.StatusBadGateway, map[string]string{"error": "availability provider returned invalid data"})
+			return
+		}
+		if upstream.ServiceID != 0 && upstream.ServiceID != service.ID {
+			writeJSON(w, http.StatusBadGateway, map[string]string{"error": "availability provider returned the wrong service"})
+			return
+		}
+		if upstream.VariantID != 0 && upstream.VariantID != service.VariantID {
+			writeJSON(w, http.StatusBadGateway, map[string]string{"error": "availability provider returned the wrong variant"})
 			return
 		}
 		writeJSON(w, http.StatusOK, normalizeAvailability(service, upstream))

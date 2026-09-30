@@ -69,3 +69,24 @@ func TestAvailabilityProxyAndNormalization(t *testing.T) {
 		t.Fatalf("unexpected result: %+v", result)
 	}
 }
+
+func TestAvailabilityAcceptsProviderMetadata(t *testing.T) {
+	upstream := httptest.NewTLSServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		_ = json.NewEncoder(w).Encode(map[string]any{
+			"barberSlug": "stacy-tutt-iii",
+			"serviceId":  533707,
+			"variantId":  5469993,
+			"dates":      []map[string]string{{"value": "2026-10-01", "label": "Thu, Oct 1"}},
+			"slots":      []map[string]string{{"date": "2026-10-01", "value": "10:30", "label": "10:30 AM"}},
+		})
+	}))
+	defer upstream.Close()
+
+	withAvailabilityTemplate(t, upstream.URL+"?serviceId={serviceId}")
+	req := httptest.NewRequest(http.MethodGet, "/api/availability?barberSlug=stacy-tutt-iii&serviceId=533707", nil)
+	rec := httptest.NewRecorder()
+	availabilityHandler(upstream.Client()).ServeHTTP(rec, req)
+	if rec.Code != http.StatusOK {
+		t.Fatalf("status = %d body=%s", rec.Code, rec.Body.String())
+	}
+}
