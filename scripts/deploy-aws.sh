@@ -11,7 +11,7 @@ BUCKET=$(value SiteBucketName)
 DIST=$(value DistributionId)
 SITE=$(value WebsiteURL)
 API=$(value ApiURL)
-(cd frontend && npm ci && npm run lint && VITE_API_BASE_URL="${API%/}" npm run build)
+(cd frontend && npm ci && npm run lint && npm run build)
 (cd backend && go test ./...)
 aws s3 sync frontend/dist/ "s3://$BUCKET/" --delete --exclude 'index.html' --cache-control 'public,max-age=31536000,immutable' --profile "$AWS_PROFILE" --region "$AWS_REGION"
 aws s3 cp frontend/dist/index.html "s3://$BUCKET/index.html" --content-type 'text/html; charset=utf-8' --cache-control 'no-cache,no-store,must-revalidate' --profile "$AWS_PROFILE" --region "$AWS_REGION"
